@@ -1,15 +1,8 @@
 
 # create an optional parameter so program will work whether or not one is given
-def hello_world(name={})
+def hello_world(name="World")
 
-  # if a name is given, return "Hello, [name]!"
-  if name.length != 0 || !name.empty?
-    return "Hello, #{name}!"
-  else
-  # if blank string or no parameters given, return "Hello, World!"
-    return "Hello, World!"
-  end
+# if a non-empty string/name is given (true), return "Hello, [name]!"
+# else (false) so return "Hello, World!"
+return name.length > 0 ? "Hello, #{name}!" : "Hello, World!"
 end
-
-
-# TODO: try other conditional like ternary???
