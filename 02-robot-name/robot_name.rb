@@ -2,26 +2,28 @@
 # /^[A-Z]{2}\d{3}$/
 class Robot
 
+  attr_accessor :name
+
   # TODO rewrite so we can do 001; maybe use arrays then combine at end??
 
-
-  def initialize(name)
-    @name = name
+  def initialize()
+    @name = reset()
   end
 
-  def name
-    @name
-  end
 
+  def reset()
+
+    while true
+    alpha = ("A".."Z").to_a.sample(2).join("")
+    num = rand(1..9).to_s+rand(1..9).to_s+rand(1..9).to_s
+
+    reset_name = (alpha + num)
+
+    if reset_name != @name
+      @name = reset_name
+      return @name
+    end
+
+    end
+  end
 end
-
-
-reset_name = ("A".."Z").to_a.sample(3) << rand(100..999).to_s
-reset_name = reset_name.join("")
-
-new_name = Robot.new(reset_name)
-puts new_name.name
-
-# puts new_name
-#
-# puts new_name.display
