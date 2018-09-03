@@ -4,8 +4,6 @@ class Robot
 
   attr_accessor :name
 
-  # TODO rewrite so we can do 001; maybe use arrays then combine at end??
-
   def initialize()
     @name = reset()
   end
