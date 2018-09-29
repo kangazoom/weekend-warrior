@@ -17,10 +17,7 @@ class Alouette
 
   def self.verse(verse_num)
     ending ="Alouette!\nAlouette!\nA-a-a-ah"
-
-
     verse_string = ""
-
 
     lines_array = lines_for_verse(verse_num)
 
@@ -31,32 +28,23 @@ class Alouette
     end
 
     verse_string << ending
-    # verse_string << "\n\n"
 
-  return verse_string
-
-end
+    return verse_string
+  end
 
   def self.sing
     song_string = ""
 
     start = "Alouette, gentille alouette,\nAlouette, je te plumerai."
-song_string << start
-
+    song_string << start
 
     8.times do |i|
-
       song_string << "\n\n"
       song_string << verse(i)
       song_string << "\n\n"
       song_string << start
     end
 
-
     return song_string
-
   end
 end
-
-
-puts Alouette.sing
